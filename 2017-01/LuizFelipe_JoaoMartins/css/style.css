@@ -1,0 +1,178 @@
+body {
+	background-image: url(../assets/background.png) ;
+	background-position: center center;
+	background-repeat:  no-repeat;
+	background-attachment: fixed;
+	background-size:  cover;
+}
+
+@media only screen and (min-device-width : 640px) {
+	.navbar {
+		width: 75%;
+		margin: 0 auto;
+	}
+}
+
+img {
+    cursor: zoom-in;
+}
+
+#screenshot {
+	margin-top: 10px;
+}
+
+.navbar {
+	border-top-right-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+	border-bottom-right-radius: 15px !important;
+	border-bottom-left-radius: 15px !important;
+	margin-bottom: 25px;
+	box-shadow: 5px 5px 5px #999; 
+	-moz-box-shadow: 5px 5px 5px #999;
+	-webkit-box-shadow: 0px 5px 10px black;
+}
+
+.form-control {
+	border-radius: 0px !important;
+}
+
+.item:hover {
+	font-weight: bold;
+}
+
+.item {
+	padding-top: 20px !important; 
+	font-family: 'Vibur', cursive;
+	font-size: 25px !important;
+	color: white !important;
+}
+
+.entrar {
+	font-family: 'Vibur', cursive;
+	font-size: 25px !important;
+	color: white !important;
+}
+
+canvas {
+	border-radius: 3px;
+	border-width: 5px;
+	border-style: solid;
+}
+
+.navbar-brand {
+	font-family: 'Vibur', cursive;
+	font-size: 27px !important;
+	color: white !important;
+}
+
+.trophies {
+	border-radius: 3px;
+	height: 100% !important;
+	min-height: 480px !important;
+	max-height: 480px !important;
+	overflow: auto !important;
+	background: ivory;
+	margin-left: 30px;
+}
+
+.trophy-list-header {
+	font-family: 'Vibur', cursive;
+	font-size: 25px;
+	text-align: center;
+	color: black !important;
+}
+
+.modal-scoreboard-title {
+	font-family: 'Vibur', cursive;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+	color: black !important;	
+}
+
+.list-group-item-heading {
+	color: black !important;
+	font-weight: bold;
+}
+
+.screenshots-container {
+	margin-bottom: 10px;
+	max-width: 80% !important;
+	border-radius: 10px;
+	background-color: #EEEEEE !important;
+	border-top-right-radius: 0px !important;
+	border-top-left-radius: 0px !important;
+}
+
+.screenshots-container-header {
+	text-align: center;
+	padding: 3px;
+	background-color: #dbdbdb;
+	max-width: 80% !important;
+	border-top-right-radius: 5px !important;
+	border-top-left-radius: 5px !important;
+	border-bottom-right-radius: 0px !important;
+	border-bottom-left-radius: 0px !important;
+}
+
+.screenshots-title {
+	font-family: 'Vibur', cursive;
+	font-size: 25px;
+	text-align: center;
+	font-weight: bold;
+	color: black !important;	
+}
+
+.media-carousel 
+{
+  margin-bottom: 0;
+  padding: 0 40px 30px 40px;
+  margin-top: 30px;
+}
+/* Previous button  */
+.media-carousel .carousel-control.left 
+{
+  left: -12px;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Next button  */
+.media-carousel .carousel-control.right 
+{
+  right: -12px !important;
+  background-image: none;
+  background: none repeat scroll 0 0 #222222;
+  border: 4px solid #FFFFFF;
+  border-radius: 23px 23px 23px 23px;
+  height: 40px;
+  width : 40px;
+  margin-top: 30px
+}
+/* Changes the position of the indicators */
+.media-carousel .carousel-indicators 
+{
+  right: 50%;
+  top: auto;
+  bottom: 0px;
+  margin-right: -19px;
+}
+/* Changes the colour of the indicators */
+.media-carousel .carousel-indicators li 
+{
+  background: #c0c0c0;
+}
+.media-carousel .carousel-indicators .active 
+{
+  background: #333333;
+}
+.media-carousel img
+{
+  width: 250px;
+  height: 150px
+}
+/* End carousel */

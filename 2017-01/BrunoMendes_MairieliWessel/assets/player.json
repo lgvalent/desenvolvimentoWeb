@@ -1,0 +1,156 @@
+{"frames": [
+
+{
+	"filename": "playerRed_dead.png",
+	"frame": {"x":100,"y":141,"w":39,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":46},
+	"sourceSize": {"w":39,"h":46}
+},
+{
+	"filename": "playerRed_duck.png",
+	"frame": {"x":1,"y":144,"w":56,"h":34},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":34},
+	"sourceSize": {"w":56,"h":34}
+},
+{
+	"filename": "playerRed_fall.png",
+	"frame": {"x":183,"y":1,"w":39,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":50},
+	"sourceSize": {"w":39,"h":50}
+},
+{
+	"filename": "playerRed_hit.png",
+	"frame": {"x":67,"y":1,"w":56,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":38},
+	"sourceSize": {"w":56,"h":38}
+},
+{
+	"filename": "playerRed_roll.png",
+	"frame": {"x":182,"y":53,"w":40,"h":40},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":40,"h":40},
+	"sourceSize": {"w":40,"h":40}
+},
+{
+	"filename": "playerRed_stand.png",
+	"frame": {"x":100,"y":91,"w":39,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":48},
+	"sourceSize": {"w":39,"h":48}
+},
+{
+	"filename": "playerRed_swim1.png",
+	"frame": {"x":51,"y":91,"w":47,"h":50},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":47,"h":50},
+	"sourceSize": {"w":47,"h":50}
+},
+{
+	"filename": "playerRed_swim2.png",
+	"frame": {"x":1,"y":91,"w":48,"h":51},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":48,"h":51},
+	"sourceSize": {"w":48,"h":51}
+},
+{
+	"filename": "playerRed_switch1.png",
+	"frame": {"x":1,"y":41,"w":52,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":52,"h":48},
+	"sourceSize": {"w":52,"h":48}
+},
+{
+	"filename": "playerRed_switch2.png",
+	"frame": {"x":55,"y":41,"w":51,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":51,"h":48},
+	"sourceSize": {"w":51,"h":48}
+},
+{
+	"filename": "playerRed_up1.png",
+	"frame": {"x":141,"y":85,"w":39,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":48},
+	"sourceSize": {"w":39,"h":48}
+},
+{
+	"filename": "playerRed_up2.png",
+	"frame": {"x":182,"y":95,"w":39,"h":46},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":46},
+	"sourceSize": {"w":39,"h":46}
+},
+{
+	"filename": "playerRed_up3.png",
+	"frame": {"x":125,"y":1,"w":56,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":56,"h":38},
+	"sourceSize": {"w":56,"h":38}
+},
+{
+	"filename": "playerRed_walk1.png",
+	"frame": {"x":141,"y":135,"w":39,"h":48},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":48},
+	"sourceSize": {"w":39,"h":48}
+},
+{
+	"filename": "playerRed_walk2.png",
+	"frame": {"x":59,"y":143,"w":39,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":45},
+	"sourceSize": {"w":39,"h":45}
+},
+{
+	"filename": "playerRed_walk3.png",
+	"frame": {"x":182,"y":143,"w":39,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":39,"h":45},
+	"sourceSize": {"w":39,"h":45}
+},
+{
+	"filename": "playerRed_walk4.png",
+	"frame": {"x":108,"y":41,"w":49,"h":42},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":49,"h":42},
+	"sourceSize": {"w":49,"h":42}
+},
+{
+	"filename": "playerRed_walk5.png",
+	"frame": {"x":1,"y":1,"w":64,"h":38},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":64,"h":38},
+	"sourceSize": {"w":64,"h":38}
+}],
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "player.png",
+	"format": "RGBA8888",
+	"size": {"w":223,"h":189},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:8122684e6575c229e289c64c596127f4:6d08ce99506669346ec3c195e642486c:86d5339b780aedd87b35e2b7c0a7e11b$"
+}
+}

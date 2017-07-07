@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Mario Evolution</title>
+    </head>
+
+    <body >
+        <!-- FIXED NAVBAR -->
+        <div class= 'parallax'> </div>
+        <nav class='navbar navbar-inverse navbar-fixed-top'>
+            <div class='container'>
+                <div class='navbar-header'>
+                    <div class='navbar-brand'>
+                        Game Center
+                    </div>
+                </div>
+
+                <!-- form de login -->
+                <form class='navbar-form navbar-left' id='form-login'>
+                    <div class='form-group'>
+                        <input type='text' id="login-login"  class='form-control' placeholder='Username'>
+                        <input type='password' id="login-password" class='form-control' placeholder='Password'>
+                    </div>
+                    <button type='button' class='btn btn-primary' id='form-login-button' onclick="ServerComm.login();">
+                        <span class='glyphicon glyphicon-log-in'></span>
+                        Login
+                    </button>
+                    <button type='button' class='btn btn-primary' id='form-login-button' onclick="ServerComm.signup();">
+                        <span class='glyphicon glyphicon-log-in'></span>
+                        Cadastrar
+                    </button>
+                </form>
+
+                <!-- informacao apos o login -->
+                <div class='nav navbar-nav' id='label-logged-in' 
+                     style='display: none'>
+                    <p class='navbar-text'>
+                        Logged in as <strong>John Doe</strong>
+                    </p>
+                    <form class='navbar-form navbar-left'>
+                        <button type='button' class='btn btn-primary'
+                                id='button-profile' data-toggle='modal'
+                                data-target='#modalProfile'>
+                            <span class='glyphicon glyphicon-modal-window'></span>
+                            View Profile                
+                        </button>
+                    </form>
+                </div>
+
+                <!-- status da conexao com game server -->
+                <div class='nav navbar-nav navbar-right'>
+                    <p class='navbar-text'>Status:</p>
+                    <h4 class='navbar-text'>
+                        <span id="status" class='label label-success'>ONLINE</span>
+                    </h4>
+                </div>
+
+            </div>
+        </nav>
+
+
+        <!-- MODAL: PROFILE -->
+        <div id='modalProfile' class='modal fade' role='dialog'>
+            <div class='modal-dialog'>
+                <div class='modal-content'>
+
+                    <div class='modal-header'>
+                        <button type='button' class='close' data-dismiss='modal'>
+                            &times;
+                        </button>
+                        <h4 class='modal-title'>John Doe Profile</h4>
+                    </div>
+
+                    <!-- lista de itens do profile -->
+                    <ul class='modal-body list-group'>
+                        <li class='list-group-item justify-content-between'>
+                            Gamer Points (XP)
+                            <span class='badge badge-default badge-pill'>220</span>
+                        </li>
+                        <li class='list-group-item justify-content-between'>
+                            Gamer Points (XP)
+                            <span class='badge badge-default badge-pill'>220</span>
+                        </li>
+                    </ul>
+
+                    <div class='modal-footer'>
+                        <button type='button' class='btn btn-default' 
+                                data-dismiss='modal'>Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-top: 41px;">
+            <!-- Phaser Game -->
+            <div id="game-container" class="center"  >
+            </div>
+
+            <!-- Panel Trophies -->
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <h3 class='panel-title'>Trophies</h3>
+                    <small>List of unlocked trophies</small>
+                </div>
+                <div class='panel-body'>
+                    <ul id='div-trophy' class="list-group">
+                        <p id='trophies-list-empty-label'>
+                            There are no trophies.
+                        </p>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Panel Screenshots -->
+            <div class='panel panel-default'>
+                <div class='panel-heading'>
+                    <h3 class='panel-title'>Screenshots</h3>
+                    <small>Use <kbd>P</kbd> to capture the game screen</small>
+                </div>
+                <div class='panel-body'>
+                    <div id='div-screenshot'>
+                        <p id='screenshots-empty-label'>
+                            There are no screenshots.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <!-- TEMPLATES -->
+    <script id='template-profile-item' type='type/x-handlebars-template'>
+        <li class='list-group-item justify-content-between'>
+        {{description}}
+        <span class='badge badge-default badge-pill'>{{value}}</span>
+        </li>
+    </script>
+
+    <!-- INCLUDES DAS LIBS -->
+    <script src="javascripts/lib/jquery-3.2.0.js"></script>
+    <script src="javascripts/lib/handlebars-v4.0.10.js"></script>
+    <script src="javascripts/lib/phaser.js"></script>
+    <script src="bootstrap-3.3.7/js/bootstrap.js"></script>
+
+    <script src="javascripts/bala.js"></script>
+    <script src="javascripts/coin.js"></script>
+    <script src="javascripts/config.js"></script>
+    <script src="javascripts/game.js"></script>
+    <script src="javascripts/gamecenter.js"></script>
+    <script src="javascripts/gamestate.js"></script>
+    <script src="javascripts/lava.js"></script>
+    <script src="javascripts/nextlevel.js"></script>
+    <script src="javascripts/nuvem.js"></script>
+    <script src="javascripts/planta.js"></script>
+    <script src="javascripts/player.js"></script>
+    <script src="javascripts/canhao.js"></script>
+    <script src="javascripts/playstate.js"></script>
+    <script src="javascripts/screens.js"></script>
+    <script src="javascripts/trophy.js"></script>
+    <script src="javascripts/tartaruga.js"></script>
+    <script src="javascripts/vida.js"></script>
+    <script src="javascripts/plantahorizontal.js"></script>
+    <script src="javascripts/plantagelo.js"></script>
+    <script src="javascripts/esqueleto.js"></script>
+    <script src="javascripts/voador.js"></script>
+    <script src="javascripts/esqueletos2.js"></script>
+    <script src="javascripts/osso.js"></script>
+    <script src="javascripts/diamante.js"></script>
+    <script src="javascripts/teleport.js"></script>
+
+    <link rel="stylesheet" href="bootstrap-3.3.7/css/bootstrap.css"/>
+    <link rel="stylesheet" href="stylesheets/style.css"/>
+</html>

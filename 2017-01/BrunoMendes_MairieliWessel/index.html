@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/notify.css">
+    <link rel="stylesheet" href="css/viewer.min.css">
+    <link rel="stylesheet" href="css/prettify.css">
+    <title>Jump Boy</title>
+
+    <script src="js/lib/phaser.js"></script>
+    <script src='js/lib/jquery-3.2.0.js'></script>
+    <script src='js/lib/prettify.js'></script>
+    <script src='js/lib/viewer.min.js'></script>
+    <script src='js/lib/notify.js'></script>
+    <script src='js/lib/bootstrap.min.js'></script>
+    <script src='js/lib/jquery.cookie.js'></script>
+    <script src='js/Config.js'></script>
+    <script src='js/GameState.js'></script>
+    <script src='js/Game.js'></script>
+    <script src='js/ServerComm.js'></script>
+    <script src='js/Coin.js'></script>
+    <script src='js/Player.js'></script>
+    <script src='js/Saw.js'></script>
+    <script src='js/Flyer.js'></script>
+    <script src='js/Spiker.js'></script>
+    <script src='js/Jumper.js'></script>
+    <script src='js/SawFree.js'></script>
+    <script src='js/Trophy.js'></script>
+    <script src='js/TitleState.js'></script>
+    <script src='js/WinState.js'></script>
+    <script src='js/PlayState.js'></script>
+    <script src='js/Login.js'></script>
+</head>
+
+<body>
+    <!-- Modal Register -->
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Register</h4>
+                </div>
+                <div class="modal-body">
+                    <form class='form' id='form-register'>
+                        <div class='form-group'>
+                            <input id="useridregister" type='text' class='form-control' placeholder='Username' required autocomplete="off">
+                        </div>
+                        <div class='form-group'>
+                            <input id="emailregister" type='text' class='form-control' placeholder='Email' required autocomplete="off">
+                        </div>
+                        <div class='form-group'>
+                            <input id="passwordregister" type='password' class='form-control' placeholder='Password' required autocomplete="off">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-warning" id="doRegister">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Profile -->
+    <div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Profile</h4>
+                </div>
+                <div class="modal-body">
+                    <h1 id="useridProfile"></h1>
+                    <h4>Email: <span id="emailProfile"></span></h4>
+                    <h4>Last Login: <span id="lastloginProfile"></span></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Navbar -->
+    <nav class='navbar navbar-inverse'>
+        <div class='container'>
+            <div class='navbar-header'>
+                <div class='navbar-brand'>
+                    Game Center
+                </div>
+            </div>
+
+            <form class='navbar-form navbar-left' id='form-login'>
+                <div class='form-group'>
+                    <input id="userid" type='text' class='form-control' placeholder='Username' required autocomplete="off">
+                    <input id="password" type='password' class='form-control' placeholder='Password' required autocomplete="off">
+
+                    <button id="doLogin" type='submit' class='btn btn-primary form-control'>
+                        <span class='glyphicon glyphicon-log-in'></span> Login
+                    </button>
+                </div>
+            </form>
+
+            <button id="buttonModalRegister" class='btn btn-warning navbar-btn' data-toggle='modal' data-target='#registerModal'><span class='glyphicon glyphicon-new-window'></span> Register</button>
+
+            <div class='nav navbar-nav' id='label-logged-in' style='display: none'>
+                <button type='button' class='btn btn-primary navbar-btn' id='button-profile' data-toggle='modal' data-target='#profileModal'>
+                        <span class='glyphicon glyphicon-modal-window'></span> View Profile
+                </button>
+                <p class='navbar-text'>
+                    Logged in as <strong id="logged-as"></strong>
+                </p>
+            </div>
+
+            <div class='nav navbar-nav navbar-right'>
+                <h4 class='navbar-text'>
+                    <span id="statusServer" class='label label-success'>SERVER ONLINE</span>
+                </h4>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Game and Cia -->
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <div class="col-md-9">
+                    <div id="game-container" class='center'></div>
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    <h3><span class="label label-primary" id="xp-total">0</span> <span class="label label-success">TROPHIES</span></h3>
+                    <div class="list-group" id='div-trophy'></div>
+                    <button class="btn btn-danger" onclick="clearTrophies()">Clear Trophies</button>
+                </div>
+                <div class="col-md-12" id='div-screenshot'><img></img></div>
+                <div class="col-md-12">developed by <a target="_blank" href="https://brnomendes.github.io/">Bruno Mendes</a> & <a target="_blank" href="http://mairieli.com/">Mairieli Wessel</a></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const GAME = new Game();
+    function clearTrophies() {
+        $("#div-trophy").empty();
+        $("#xp-total").text("0");
+        GAME.state.states.Play.trophy.clearTrophies();
+    }
+
+    function appendScreenShot(img) {
+        $('#div-screenshot').append(
+            `<img src="${img}" width="19%" height="19%" style="margin: 5px 5px 5px 0px;">`
+        )
+        $('#div-screenshot').viewer('update');
+    }
+
+    $('#div-screenshot').viewer({'title': false, 'button': false, 'movable': false, 'zoomable': false, 'rotatable': false, 'scalable': false, 'fullscreen': false});
+
+    $(document).ready(function () {
+        $('#doLogin').click(login);
+        $('#doRegister').click(register);
+    });
+
+    function checkStatusServer() {
+        setTimeout(() => {
+            $.ajax({
+                url: 'http://' + self.location.host,
+                type: 'GET',
+                success: () => {
+                    $("#statusServer").removeClass("label-danger").addClass("label-success");
+                    $("#statusServer").html("SERVER ONLINE");
+                },
+                error: () => {
+                    $("#statusServer").removeClass("label-success").addClass("label-danger");
+                    $("#statusServer").html("SERVER OFFLINE");
+                }
+            });
+            checkStatusServer();
+        }, 5000);
+    }
+    checkStatusServer();
+
+</script>
+
+</html>
